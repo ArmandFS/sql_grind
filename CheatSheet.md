@@ -1,10 +1,8 @@
 # SQL Cheatsheet for Data Science Interview Practice
 
-Oct 23, 2026 · @Armand
+## 1. How SQL actually runs
 
-## 1. Read this first: how SQL actually runs
-
-Most interview problems reduce to a join, a GROUP BY, or a window function, and most bugs come from forgetting the order SQL evaluates a query. Learn this order once and sections 3 to 9 become lookup material while you solve.
+Most interview problems reduce to a join, a GROUP BY, or a window function, and most bugs come from forgetting the order SQL evaluates a query. 
 
 You write `SELECT` first, but the database runs a query in this order:
 
@@ -498,13 +496,6 @@ If a query that looks right fails with a syntax error, the dialect is the first 
 - Are dates truncated to the right unit, and is the end of a `BETWEEN` range inclusive of what you want?
 - Does `ORDER BY` need a tiebreaker, and is `DISTINCT` hiding a bug rather than fixing one?
 
-**When you are stuck without AI**
-
-1. Write out in plain words what one row of the expected output means.
-2. Build the query in layers: run the `FROM` / `JOIN` alone, add `WHERE`, add `GROUP BY`. In a CTE chain, `SELECT *` from each CTE to inspect it.
-3. Compare your row count with the sample output. A mismatch usually means a join fan-out or a missing filter.
-4. Google syntax, not solutions: search for "postgres date\_trunc week" or "mysql lag function", not the problem title. You learn the pattern and keep the problem yours.
-5. After solving, rewrite once using a different tool (window function instead of subquery, or the reverse) and compare.
 
 **Suggested order to practice** (move on when the easy problems in a tier feel automatic)
 
@@ -515,4 +506,4 @@ If a query that looks right fails with a syntax error, the dialect is the first 
 5. Window functions: ranking first, then `LAG` / `LEAD`, then running totals
 6. The patterns in section 9, on medium and hard problems
 
-For your repo, one file per problem (for example `leetcode/0184_department_highest_salary.sql`) with a short comment at the top giving the problem link, the dialect, and the pattern used. A line like that is what makes the repo useful when you revisit it before an interview.
+
