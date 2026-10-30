@@ -7,4 +7,4 @@ FROM Students, Examinations, Subjects
 CROSS JOIN Subjects.subject_name
 LEFT JOIN Examinations.subject_name
     ON Subjec
-#idk how to finish ts bro
+#idk how to finish ts bro like bro
